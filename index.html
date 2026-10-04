@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEPT NEWSLETTER</title>
+    
+    <meta name="description" content="Engage college students with a dynamic newsletter featuring articles, live event photos, and commentary on urban issues, fostering community connection." />
+    <meta property="og:title" content="CEPT NEWSLETTER" />
+    <meta property="og:description" content="Engage college students with a dynamic newsletter featuring articles, live event photos, and commentary on urban issues, fostering community connection." />
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      
+      <!-- ===================================================================
+           SCREEN 1: LANDING SCREEN
+           =================================================================== -->
+      <section id="landing-view" class="view active">
+        <!-- Background with Shimmer Placeholder -->
+        <div class="landing-bg-container img-placeholder-wrapper" id="landing-bg-wrap">
+          <img
+            class="landing-bg-img"
+            id="landing-bg-img"
+            src="assets/images/ref2.png"
+            onerror="this.onerror=null; this.src='https://trice-rail-70868497.figma.site/assets/ref2-vRtU3aC-.png';"
+            alt="CEPT University campus"
+          />
+        </div>
+        
+        <!-- Overlays -->
+        <div class="landing-radial-overlay"></div>
+        <div class="landing-linear-overlay"></div>
+        
+        <!-- Top Metadata -->
+        <div class="landing-top-left">CEPT University</div>
+        <div class="landing-top-right">Vol. XLVII · Sep 24, 2026</div>
+        
+        <!-- Center Hero Title -->
+        <div class="landing-hero">
+          <h1>
+            CEPT<br />
+            <span>Chronicles</span>
+          </h1>
+        </div>
+        
+        <!-- Click Anywhere Indicator -->
+        <div class="landing-enter-prompt">
+          <span>Click anywhere to enter</span>
+          <div class="landing-enter-line"></div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="landing-bottom-bar" id="landing-bottom-bar">
+          <div class="landing-latest">
+            <span class="landing-latest-tag">Latest</span>
+            <p class="landing-latest-headline">CEPT Campus Submerged as Ahmedabad Receives Heaviest Rainfall in a Decade</p>
+          </div>
+          
+          <nav class="landing-nav" id="landing-nav">
+            <button class="nav-link-btn" data-target="articles">
+              Articles
+              <span class="nav-underline"></span>
+            </button>
+            <button class="nav-link-btn" data-target="events">
+              Event Highlights
+              <span class="nav-underline"></span>
+            </button>
+            <button class="nav-link-btn" data-target="team">
+              The Team
+              <span class="nav-underline"></span>
+            </button>
+            <button class="nav-link-btn" data-target="about">
+              About
+              <span class="nav-underline"></span>
+            </button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SCREEN 2: ARTICLES SCREEN
+           =================================================================== -->
+      <section id="articles-view" class="view">
+        <header class="subpage-header">
+          <button class="back-btn" data-nav="landing">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Home
+          </button>
+          <span class="subpage-title">Articles</span>
+        </header>
+        
+        <div class="articles-container">
+          <div class="articles-grid" id="articles-grid">
+            <!-- Dynamically populated from articlesData -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SCREEN 3: ARTICLE DETAIL SCREEN (READER VIEW)
+           =================================================================== -->
+      <section id="article-detail-view" class="view">
+        <div class="article-detail-top-bar">
+          <button class="back-btn" id="article-detail-back-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Articles
+          </button>
+          <span class="article-detail-brand">CEPT Chronicles</span>
+        </div>
+        
+        <div class="article-detail-hero img-placeholder-wrapper" id="article-detail-hero-wrap">
+          <img id="detail-hero-img" class="article-detail-hero-img" src="" alt="" />
+          <div class="article-detail-hero-overlay"></div>
+          
+          <div class="article-detail-hero-content">
+            <span class="article-detail-tag" id="detail-tag"></span>
+            <h1 class="article-detail-headline" id="detail-headline"></h1>
+            <p class="article-detail-sub" id="detail-sub"></p>
+            <span class="article-detail-meta" id="detail-meta"></span>
+          </div>
+        </div>
+        
+        <div class="article-detail-body">
+          <p class="article-detail-lead" id="detail-lead"></p>
+          <div id="detail-paragraphs">
+            <!-- Rendered story paragraphs -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SCREEN 4: EVENT HIGHLIGHTS SCREEN
+           =================================================================== -->
+      <section id="events-view" class="view">
+        <header class="subpage-header">
+          <button class="back-btn" data-nav="landing">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Home
+          </button>
+          <span class="subpage-title">Event Highlights</span>
+        </header>
+        
+        <div class="events-container">
+          <div class="events-grid" id="events-grid">
+            <!-- Dynamically populated from eventsData -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SCREEN 5: THE TEAM SCREEN
+           =================================================================== -->
+      <section id="team-view" class="view">
+        <header class="subpage-header center-aligned">
+          <button class="back-btn" data-nav="landing">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Home
+          </button>
+          <span class="subpage-title">The Team</span>
+        </header>
+        
+        <div class="team-container">
+          <p class="team-badge">CEPT Chronicles · 2026</p>
+          
+          <div class="team-photo-stage">
+            <!-- Ambient Glow Background -->
+            <div
+              class="team-ambient-glow"
+              id="team-ambient-glow"
+              style="background-image: url('assets/images/team.jpg');"
+            ></div>
+            
+            <!-- Main Photo Frame with Shimmer Placeholder -->
+            <div class="team-photo-frame img-placeholder-wrapper" id="team-photo-wrap">
+              <img
+                class="team-main-img"
+                id="team-main-img"
+                src="assets/images/team.jpg"
+                onerror="this.onerror=null; this.src='https://trice-rail-70868497.figma.site/assets/team-D92PWueA.jpg'; document.getElementById('team-ambient-glow').style.backgroundImage='url(https://trice-rail-70868497.figma.site/assets/team-D92PWueA.jpg)';"
+                alt="The CEPT Chronicles team on the campus amphitheatre steps"
+              />
+              <div class="team-fade-gradient"></div>
+            </div>
+          </div>
+          
+          <!-- Roster -->
+          <div class="team-roster" id="team-roster">
+            <!-- Dynamically populated from teamData -->
+          </div>
+          
+          <p class="team-footer-text">Faculty of Planning &amp; Public Policy · CEPT University, Ahmedabad</p>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SCREEN 6: ABOUT SCREEN
+           =================================================================== -->
+      <section id="about-view" class="view">
+        <header class="subpage-header">
+          <button class="back-btn" data-nav="landing">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Home
+          </button>
+          <span class="subpage-title">About</span>
+        </header>
+        
+        <div class="about-container">
+          <div class="about-content">
+            <span class="about-est">Est. 1979</span>
+            <h1 class="about-title">CEPT Chronicles</h1>
+            <p class="about-p1">The student-run newspaper of CEPT University, Ahmedabad. Editorially independent since 1979. Published every Thursday during term — in print and online.</p>
+            <p class="about-p2">We cover campus news, urban issues, arts, research, and student life. Every voice on campus is welcome — whether you write, photograph, or have a story to share.</p>
+            
+            <div class="about-buttons">
+              <button class="about-btn primary">Submit Article</button>
+              <button class="about-btn secondary">Send a Photo</button>
+              <button class="about-btn secondary">Join Editorial Board</button>
+            </div>
+            
+            <div class="about-footer">
+              <p class="about-contact-text">chronicles@cept.ac.in · CEPT University, Navrangpura, Ahmedabad 380009</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
